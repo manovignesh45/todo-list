@@ -33,6 +33,7 @@ function renderTodoList () {
     .forEach((deleteButton, index) => {
       deleteButton.addEventListener('click', () => {
         todoList.splice(index, 1);
+        localStorage.setItem('todoList', JSON.stringifi(todoList));
         renderTodoList();
       });
     });
@@ -56,7 +57,7 @@ function addTodo () {
     name, dueDate
   });
 
-  loacalStorage.setItem('todoList', stigify(todoList);
+  loacalStorage.setItem('todoList', JSON.stringify(todoList));
 
   inputElement.value = '';
   renderTodoList ();
