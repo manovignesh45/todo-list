@@ -5,7 +5,7 @@ document.body.addEventListener('keydown', (event) => {
   }
 });
 
-const todoList = JON.parse(loacalStorage.getItem('todoList') || [];
+const todoList = JSON.parse(localStorage.getItem('todoList')) || [];
 renderTodoList();
 
 function renderTodoList () {
@@ -62,6 +62,6 @@ function addTodo () {
   renderTodoList ();
 }
 
-function() {
-  loacalStorage.setItem('todoList', JSON.stringify(todoList));
+function saveTodoList() {
+  localStorage.setItem('todoList', JSON.stringify(todoList));
 };
