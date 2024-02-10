@@ -38,7 +38,8 @@ function renderTodoList () {
     });
 };
 
-document.querySelector('.js-add-button').addEventListener('click', () => {
+document.querySelector('.js-add-button')
+  .addEventListener('click', () => {
   addTodo();
 });
 
