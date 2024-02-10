@@ -33,7 +33,7 @@ function renderTodoList () {
     .forEach((deleteButton, index) => {
       deleteButton.addEventListener('click', () => {
         todoList.splice(index, 1);
-        localStorage.setItem('todoList', JSON.stringifi(todoList));
+        saveTodoList();
         renderTodoList();
       });
     });
@@ -56,9 +56,12 @@ function addTodo () {
     // dueDate: dueDate
     name, dueDate
   });
-
-  loacalStorage.setItem('todoList', JSON.stringify(todoList));
-
+  
+  saveTodoList();
   inputElement.value = '';
   renderTodoList ();
 }
+
+function() {
+  loacalStorage.setItem('todoList', JSON.stringify(todoList));
+};
