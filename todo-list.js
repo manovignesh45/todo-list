@@ -5,7 +5,7 @@ document.body.addEventListener('keydown', (event) => {
   }
 });
 
-const todoList = [];
+const todoList = parse(loacalStorage.getItem('todoList') || [];
 renderTodoList();
 
 function renderTodoList () {
@@ -55,6 +55,8 @@ function addTodo () {
     // dueDate: dueDate
     name, dueDate
   });
+
+  loacalStorage.setItem('todoList', stigify(todoList);
 
   inputElement.value = '';
   renderTodoList ();
