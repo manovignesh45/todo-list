@@ -5,7 +5,7 @@ document.body.addEventListener('keydown', (event) => {
   }
 });
 
-const todoList = parse(loacalStorage.getItem('todoList') || [];
+const todoList = JON.parse(loacalStorage.getItem('todoList') || [];
 renderTodoList();
 
 function renderTodoList () {
